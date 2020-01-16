@@ -1,0 +1,48 @@
+{
+    "name": "beblife/phpunit-json-testdox",
+    "description": "PHPUnit package for converting all tests to testdoxs formatted in JSON.",
+    "keywords": ["phpunit", "json", "testdox", "composer", "package"],
+    "authors": [
+        {
+            "name": "Rens Bultynck",
+            "email": "rens.bultynck@hotmail.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=7.1"
+    },
+    "require-dev": {
+        "brainmaestro/composer-git-hooks": "^2.8",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpunit/phpunit": "^8.0",
+        "symfony/var-dumper": "^5.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Beblife\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": "php vendor/bin/cghooks add --ignore-lock",
+        "post-update-cmd": "php vendor/bin/cghooks update"
+    },
+    "extra": {
+        "hooks": {
+            "pre-commit": [
+                "php vendor/bin/php-cs-fixer fix",
+                "git add"
+            ]
+        }
+    }
+}
