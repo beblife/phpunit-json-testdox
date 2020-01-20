@@ -1,7 +1,13 @@
 {
     "name": "beblife/phpunit-json-testdox",
     "description": "PHPUnit package for converting all tests to testdoxs formatted in JSON.",
-    "keywords": ["phpunit", "json", "testdox", "composer", "package"],
+    "keywords": [
+        "phpunit",
+        "json",
+        "testdox",
+        "composer",
+        "package"
+    ],
     "authors": [
         {
             "name": "Rens Bultynck",
@@ -10,7 +16,7 @@
     ],
     "type": "project",
     "require": {
-		"php": ">=7.1"
+        "php": ">=7.1"
     },
     "require-dev": {
         "brainmaestro/composer-git-hooks": "^2.8",
@@ -30,7 +36,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "MockTests\\": "tests.mock/"
         }
     },
     "scripts": {
