@@ -5,6 +5,6 @@ require __DIR__."/vendor/autoload.php";
 
 use Beblife\JsonTestDox;
 
-$printer = new JsonTestDox();
+$printer = new JsonTestDox($argv[1] ?? 'phpunit.xml');
 
 echo $printer->print();
