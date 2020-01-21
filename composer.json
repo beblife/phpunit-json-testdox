@@ -44,6 +44,9 @@
         "post-install-cmd": "php vendor/bin/cghooks add --ignore-lock",
         "post-update-cmd": "php vendor/bin/cghooks update"
     },
+    "bin": [
+        "json-testdox"
+    ],
     "extra": {
         "hooks": {
             "pre-commit": [
